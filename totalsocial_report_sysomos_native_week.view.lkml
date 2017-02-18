@@ -212,19 +212,19 @@ view: report_sysomos_week {
 
   measure: twitter_sentiment_percentage_negative_avg {
     type: average
-    sql: ${twitter_sentiment_percentage_negative}/100.0;;
+    sql: ${twitter_sentiment_percentage_negative};;
     value_format_name: percent_2
   }
 
   measure: twitter_sentiment_percentage_positive_avg {
     type: average
-    sql: ${twitter_sentiment_percentage_positive}/100.0;;
+    sql: ${twitter_sentiment_percentage_positive};;
     value_format_name: percent_2
   }
 
   measure: twitter_sentiment_percentage_neutral_avg {
     type: average
-    sql: ${twitter_sentiment_percentage_neutral}/100.0;;
+    sql: ${twitter_sentiment_percentage_neutral};;
     value_format_name: percent_2
   }
 

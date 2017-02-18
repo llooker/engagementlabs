@@ -19,11 +19,19 @@ explore: report_sysomos_week {
     sql_on: ${brandcategory.category_id} = ${category.id} ;;
     relationship: many_to_one
   }
-#   join: orders {
-#     sql_on: ${orders.id} = ${order_items.order_id}
-#   }
-#
-#   join: users {
-#     sql_on: ${users.id} = ${orders.user_id}
-#   }
+}
+
+explore: sysomos_mentioncount {
+  join: brand {
+    sql_on: ${sysomos_mentioncount.sysomos_id} = ${brand.sysomos_id}  ;;
+    relationship: many_to_one
+  }
+  join: brandcategory {
+    sql_on: ${brand.id} = ${brandcategory.brand_id} ;;
+    relationship: one_to_many
+  }
+  join: category {
+    sql_on: ${brandcategory.category_id} = ${category.id} ;;
+    relationship: many_to_one
+  }
 }
