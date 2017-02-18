@@ -1,18 +1,18 @@
-view: sysomos_week {
+view: report_sysomos_week {
   sql_table_name: totalsocial.totalsocial_report_sysomos_native_week ;;
-  suggestions: no
+  suggestions: yes
 
   dimension: bir {
     type: number
     sql: ${TABLE}.bir ;;
   }
 
-  dimension: bm {
+  dimension: blog_mentions {
     type: number
     sql: ${TABLE}.bm ;;
   }
 
-  dimension: bs {
+  dimension: blog_sentiment_percentage {
     type: string
     sql: ${TABLE}.bs ;;
   }
@@ -22,7 +22,7 @@ view: sysomos_week {
     sql: ${TABLE}.bsm ;;
   }
 
-  dimension_group: ed {
+  dimension_group: end_date {
     type: time
     timeframes: [
       raw,
@@ -36,12 +36,17 @@ view: sysomos_week {
     sql: ${TABLE}.ed ;;
   }
 
-  dimension: fm {
+  dimension: forum_mentions {
     type: number
     sql: ${TABLE}.fm ;;
   }
 
-  dimension: fs {
+  measure: forum_mentions_sum {
+    type: sum
+    sql: ${forum_mentions};;
+  }
+
+  dimension: forum_sentiment_percentage {
     type: string
     sql: ${TABLE}.fs ;;
   }
@@ -51,7 +56,7 @@ view: sysomos_week {
     sql: ${TABLE}.fsm ;;
   }
 
-  dimension: i {
+  dimension: brand_id {
     type: string
     sql: ${TABLE}.i ;;
   }
@@ -61,15 +66,9 @@ view: sysomos_week {
     sql: ${TABLE}.irp ;;
   }
 
-  dimension: iv {
+  dimension: interval {
     type: string
     sql: ${TABLE}.iv ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${i} ||${iv} ||${sd_date}) ;;
-    primary_key: yes
   }
 
   dimension: ns {
@@ -127,7 +126,7 @@ view: sysomos_week {
     sql: ${TABLE}.rtosm ;;
   }
 
-  dimension_group: sd {
+  dimension_group: start_date {
     type: time
     timeframes: [
       raw,
@@ -146,7 +145,7 @@ view: sysomos_week {
     sql: ${TABLE}.srp ;;
   }
 
-  dimension: ta {
+  dimension: twitter_authority {
     type: string
     sql: ${TABLE}.ta ;;
   }
@@ -161,20 +160,24 @@ view: sysomos_week {
     sql: ${TABLE}.tir ;;
   }
 
-  dimension: tm {
+  dimension: twitter_mentions {
     type: number
     sql: ${TABLE}.tm ;;
   }
 
-  dimension: total_online_mentions {
-    type: number
+  measure: twitter_mentions_sum {
+    type: sum
+    sql: ${twitter_mentions};;
+  }
 
+  dimension: total_mentions {
+    type: number
     sql: ${TABLE}.tom ;;
   }
 
-  measure: total_online_mentions_summed {
+  measure: total_mentions_sum {
     type: sum
-    sql: ${total_online_mentions} ;;
+    sql: ${total_mentions};;
   }
 
   dimension: tomwa {
@@ -187,25 +190,42 @@ view: sysomos_week {
     sql: ${TABLE}.tos ;;
   }
 
-  dimension: twitter_negative_mentions {
-    type: number
-    sql: ${TABLE}.tsm.n ;;
-  }
-
-  measure: total_twiter_negative_mentions {
-    type: sum
-    sql: ${twitter_negative_mentions}/100.0;;
-    value_format_name: percent_2
-  }
-
   dimension: tosm {
     type: string
     sql: ${TABLE}.tosm ;;
   }
 
-  dimension: ts {
-    type: string
-    sql: ${TABLE}.ts ;;
+  dimension: twitter_sentiment_percentage_negative {
+    type: number
+    sql: ${TABLE}.ts.n ;;
+  }
+
+  dimension: twitter_sentiment_percentage_positive {
+    type: number
+    sql: ${TABLE}.ts.p ;;
+  }
+
+  dimension: twitter_sentiment_percentage_neutral {
+    type: number
+    sql: ${TABLE}.ts.ne ;;
+  }
+
+  measure: twitter_sentiment_percentage_negative_avg {
+    type: average
+    sql: ${twitter_sentiment_percentage_negative}/100.0;;
+    value_format_name: percent_2
+  }
+
+  measure: twitter_sentiment_percentage_positive_avg {
+    type: average
+    sql: ${twitter_sentiment_percentage_positive}/100.0;;
+    value_format_name: percent_2
+  }
+
+  measure: twitter_sentiment_percentage_neutral_avg {
+    type: average
+    sql: ${twitter_sentiment_percentage_neutral}/100.0;;
+    value_format_name: percent_2
   }
 
   dimension: tsm {
@@ -213,14 +233,24 @@ view: sysomos_week {
     sql: ${TABLE}.tsm ;;
   }
 
-  dimension: tti {
+  dimension: twitter_influencers {
     type: number
     sql: ${TABLE}.tti ;;
   }
 
-  dimension: ttu {
+  measure: twitter_influencers_sum {
+    type: sum
+    sql: ${twitter_influencers};;
+  }
+
+  dimension: twitter_users {
     type: number
     sql: ${TABLE}.ttu ;;
+  }
+
+  measure: twitter_users_sum {
+    type: sum
+    sql: ${twitter_users};;
   }
 
   dimension: vrp {

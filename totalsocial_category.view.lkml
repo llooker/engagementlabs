@@ -1,28 +1,28 @@
-view: totalsocial_category {
+view: category {
   sql_table_name: totalsocial.totalsocial_category ;;
-  suggestions: no
+  suggestions: yes
 
-  dimension: _id {
+  dimension: id {
     type: string
     sql: ${TABLE}._id ;;
   }
 
-  dimension: c {
+  dimension: country {
     type: string
     sql: ${TABLE}.c ;;
   }
 
-  dimension: n {
+  dimension: name {
     type: string
     sql: ${TABLE}.n ;;
   }
 
-  dimension: p {
+  dimension: parent_id {
     type: string
     sql: ${TABLE}.p ;;
   }
 
-  dimension_group: sd {
+  dimension_group: last_synchronized {
     type: time
     timeframes: [
       raw,

@@ -1,13 +1,13 @@
-view: totalsocial_brandcategory {
+view: brandcategory {
   sql_table_name: totalsocial.totalsocial_brandcategory ;;
   suggestions: no
 
-  dimension: b {
+  dimension: brand_id {
     type: string
     sql: ${TABLE}.b ;;
   }
 
-  dimension: c {
+  dimension: category_id {
     type: string
     sql: ${TABLE}.c ;;
   }

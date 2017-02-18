@@ -2,18 +2,18 @@ view: brand {
   sql_table_name: totalsocial.totalsocial_brand ;;
   suggestions: no
 
-  dimension: _id {
+  dimension: id {
     type: string
     sql: ${TABLE}._id ;;
     primary_key: yes
   }
 
-  dimension: c {
+  dimension: country {
     type: string
     sql: ${TABLE}.c ;;
   }
 
-  dimension_group: cd {
+  dimension_group: created {
     type: time
     timeframes: [
       raw,
@@ -27,22 +27,22 @@ view: brand {
     sql: ${TABLE}.cd ;;
   }
 
-  dimension: eid {
+  dimension: evalue_ids {
     type: string
     sql: ${TABLE}.eid ;;
   }
 
-  dimension: h {
+  dimension: hash {
     type: string
     sql: ${TABLE}.h ;;
   }
 
-  dimension: ib {
+  dimension: is_benchmark {
     type: yesno
     sql: ${TABLE}.ib ;;
   }
 
-  dimension_group: md {
+  dimension_group: last_modified {
     type: time
     timeframes: [
       raw,
@@ -61,12 +61,12 @@ view: brand {
     sql: ${TABLE}.n ;;
   }
 
-  dimension: p {
+  dimension: project {
     type: string
     sql: ${TABLE}.p ;;
   }
 
-  dimension_group: sd {
+  dimension_group: last_synchronized {
     type: time
     timeframes: [
       raw,
@@ -80,12 +80,12 @@ view: brand {
     sql: ${TABLE}.sd ;;
   }
 
-  dimension: sid {
+  dimension: sysomos_id {
     type: string
     sql: ${TABLE}.sid ;;
   }
 
-  dimension: tid {
+  dimension: talktrack_id {
     type: string
     sql: ${TABLE}.tid ;;
   }
