@@ -2,6 +2,10 @@ view: category {
   sql_table_name: totalsocial.totalsocial_category ;;
   suggestions: yes
 
+  filter: category_select {
+    suggest_dimension: name
+  }
+
   dimension: id {
     type: string
     sql: ${TABLE}._id ;;
@@ -15,6 +19,7 @@ view: category {
   dimension: name {
     type: string
     sql: ${TABLE}.n ;;
+    drill_fields: [brand.name]
   }
 
   dimension: parent_id {
