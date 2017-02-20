@@ -12,13 +12,20 @@ view: brandcategory {
     sql: ${TABLE}.c ;;
   }
 
+  dimension: key {
+    type: string
+    sql: ${brand_id} || ${category_id} ;;
+    primary_key: yes
+  }
+
+
   measure: count {
     type: count
     drill_fields: []
   }
 
-  measure: distinct_category_count {
-    type: count_distinct
-    sql: } ;;
-  }
+#   measure: distinct_category_count {
+#     type: count_distinct
+#     sql: } ;;
+#   }
 }

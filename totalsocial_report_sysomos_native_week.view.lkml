@@ -170,6 +170,13 @@ view: report_sysomos_week {
     sql: ${twitter_mentions};;
   }
 
+  measure: twitter_mentions_per_brand {
+    type: number
+    sql: 1.0 * ${twitter_mentions_sum}/IF(${brand.count}=0,NULL,${brand.count}) ;;
+    value_format_name: decimal_2
+    view_label: "Brand Comparison"
+  }
+
   dimension: total_mentions {
     type: number
     sql: ${TABLE}.tom ;;
@@ -256,6 +263,12 @@ view: report_sysomos_week {
   dimension: vrp {
     type: string
     sql: ${TABLE}.vrp ;;
+  }
+
+  dimension: key {
+    type: string
+    primary_key: yes
+    sql: CONCAT(${brand_id},${start_date_time}) ;;
   }
 
   measure: count {
