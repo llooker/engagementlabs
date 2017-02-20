@@ -6,6 +6,22 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
 #
+explore: brand {
+  join: report_sysomos_week {
+    sql_on: ${brand.id} = ${report_sysomos_week.brand_id}  ;;
+    relationship: one_to_many
+  }
+  join: report_evalue_week {
+    sql_on: ${report_sysomos_week.brand_id} = ${report_evalue_week.brand_id} AND $(${report_sysomos_week.start_date_date} = $(${report_evalue_week.start_date_date})  ;;
+    relationship: one_to_many
+  }
+  join: report_talktrack_week {
+    sql_on: ${report_sysomos_week.brand_id} = ${report_talktrack_week.brand_id} AND $(${report_sysomos_week.start_date_date} = $(${report_talktrack_week.start_date_date})  ;;
+    relationship: one_to_many
+  }
+}
+
+
 explore: report_sysomos_week {
   join: brand {
     sql_on: ${report_sysomos_week.brand_id} = ${brand.id}  ;;
