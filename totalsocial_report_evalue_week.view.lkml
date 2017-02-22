@@ -125,14 +125,9 @@ view: report_evalue_week {
     sql: ${twitter_retweets} ;;
   }
 
-  dimension: total_shares {
-    type: number
-    sql: ${TABLE}.ts ;;
-  }
-
-  measure: total_shares_sum {
+  measure: total_shares {
     type: sum
-    sql: ${total_shares} ;;
+    sql: ${TABLE}.ts ;;
   }
 
   dimension: tswa {
@@ -140,23 +135,18 @@ view: report_evalue_week {
     sql: ${TABLE}.tswa ;;
   }
 
-  dimension: youtube_subscribers {
-    type: number
+  measure: youtube_subscribers_avg {
+    type: average
     sql: ${TABLE}.ys ;;
   }
 
-  dimension: youtube_shares {
-    type: number
+  measure: youtube_shares {
+    type: sum
     sql: ${TABLE}.ysh ;;
   }
 
-  measure: youtube_shares_sum {
+  measure: youtube_views {
     type: sum
-    sql: ${youtube_shares} ;;
-  }
-
-  dimension: youtube_views {
-    type: number
     sql: ${TABLE}.yv ;;
   }
 
