@@ -49,7 +49,7 @@ view: report_talktrack_week {
 
   measure: impressions_sum {
     type: sum
-    sql: ${impressions_sum} ;;
+    sql: ${impressions} ;;
   }
 
   dimension: iswa {
@@ -256,6 +256,10 @@ view: report_talktrack_week {
     sql: ${TABLE}.vrp ;;
   }
 
+  dimension: key {
+    sql: CONCAT(${brand_id},${start_date_raw}) ;;
+    primary_key: yes
+  }
   measure: count {
     type: count
     drill_fields: []

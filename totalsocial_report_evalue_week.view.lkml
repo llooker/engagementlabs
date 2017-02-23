@@ -110,6 +110,10 @@ view: report_evalue_week {
     sql: ${TABLE}.sd ;;
   }
 
+  dimension: key {
+    sql: CONCAT(${brand_id},${start_date_raw}) ;;
+    primary_key: yes
+  }
   dimension: twitter_followers {
     type: number
     sql: ${TABLE}.tf ;;
