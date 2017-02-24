@@ -31,6 +31,13 @@ view: sysomos_mentioncount {
     sql: ${TABLE}.s ;;
   }
 
+  dimension: key {
+    type: string
+    sql: CONCAT(${created_raw},${sysomos_id},${source}) ;;
+    primary_key: yes
+    hidden: yes
+  }
+
   measure: mentions {
     type: sum
     sql: ${count} ;;

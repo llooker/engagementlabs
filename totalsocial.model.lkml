@@ -7,6 +7,7 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 # # and define the joins that connect them together.
 #
 explore: brand {
+  label: "Weekly Information by Brand"
   join: report_sysomos_week {
     sql_on: ${brand.id} = ${report_sysomos_week.brand_id}  ;;
     relationship: one_to_many
@@ -19,6 +20,15 @@ explore: brand {
     sql_on: ${report_sysomos_week.brand_id} = ${report_talktrack_week.brand_id} AND ${report_sysomos_week.start_date_date} = ${report_talktrack_week.start_date_date}  ;;
     relationship: one_to_many
   }
+  join: brandcategory {
+    sql_on: ${brand.id} = ${brandcategory.brand_id} ;;
+    relationship: one_to_many
+  }
+  join: category {
+    sql_on: ${brandcategory.category_id} = ${category.id} ;;
+    relationship: many_to_one
+  }
+
 }
 
 

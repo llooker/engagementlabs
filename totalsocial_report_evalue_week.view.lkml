@@ -149,6 +149,15 @@ view: report_evalue_week {
     sql: ${TABLE}.ysh ;;
   }
 
+  measure: youtube_shares_last_eight_weeks {
+    type: sum
+    sql: ${TABLE}.ysh ;;
+    filters: {
+      field: start_date_date
+      value: "56 days"
+    }
+  }
+
   measure: youtube_views {
     type: sum
     sql: ${TABLE}.yv ;;
