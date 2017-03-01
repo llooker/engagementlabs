@@ -2,7 +2,7 @@ view: report_sysomos_week {
   sql_table_name: totalsocial.totalsocial_report_sysomos_native_week ;;
   suggestions: yes
 
-  dimension: bir {
+  dimension: brand_influencer_ratio {
     type: number
     sql: ${TABLE}.bir ;;
   }
@@ -17,7 +17,7 @@ view: report_sysomos_week {
     sql: ${TABLE}.bs ;;
   }
 
-  dimension: bsm {
+  dimension: blog_sentiment_mentions {
     type: string
     sql: ${TABLE}.bsm ;;
   }
@@ -51,7 +51,7 @@ view: report_sysomos_week {
     sql: ${TABLE}.fs ;;
   }
 
-  dimension: fsm {
+  dimension: forum_sentiment_mentions {
     type: string
     sql: ${TABLE}.fsm ;;
   }
@@ -61,7 +61,7 @@ view: report_sysomos_week {
     sql: ${TABLE}.i ;;
   }
 
-  dimension: irp {
+  dimension: influence_rollup_plan {
     type: string
     sql: ${TABLE}.irp ;;
   }
@@ -71,57 +71,57 @@ view: report_sysomos_week {
     sql: ${TABLE}.iv ;;
   }
 
-  dimension: ns {
+  dimension: net_sentiment {
     type: number
     sql: ${TABLE}.ns ;;
   }
 
-  dimension: rbir {
+  dimension: rolledup_brand_influencer_ratio {
     type: number
     sql: ${TABLE}.rbir ;;
   }
 
-  dimension: rns {
+  dimension: rolledup_net_sentiment {
     type: number
     sql: ${TABLE}.rns ;;
   }
 
-  dimension: roni {
+  dimension: raw_online_influence {
     type: number
     sql: ${TABLE}.roni ;;
   }
 
-  dimension: rons {
+  dimension: raw_online_sentiment {
     type: number
     sql: ${TABLE}.rons ;;
   }
 
-  dimension: ronv {
+  dimension: raw_online_volume {
     type: number
     sql: ${TABLE}.ronv ;;
   }
 
-  dimension: rtbir {
+  dimension: rolledup_total_influencer_ratio {
     type: number
     sql: ${TABLE}.rtbir ;;
   }
 
-  dimension: rtbm {
+  dimension: rolledup_total_base_mentions {
     type: number
     sql: ${TABLE}.rtbm ;;
   }
 
-  dimension: rtom {
+  dimension: rolledup_total_mentions {
     type: number
     sql: ${TABLE}.rtom ;;
   }
 
-  dimension: rtos {
+  dimension: rolledup_total_sentiment {
     type: string
     sql: ${TABLE}.rtos ;;
   }
 
-  dimension: rtosm {
+  dimension: rolledup_total_sentiment_mentions {
     type: string
     sql: ${TABLE}.rtosm ;;
   }
@@ -140,7 +140,7 @@ view: report_sysomos_week {
     sql: ${TABLE}.sd ;;
   }
 
-  dimension: srp {
+  dimension: sentiment_rollup_plan {
     type: string
     sql: ${TABLE}.srp ;;
   }
@@ -150,12 +150,12 @@ view: report_sysomos_week {
     sql: ${TABLE}.ta ;;
   }
 
-  dimension: tbm {
+  dimension: total_base_mentions {
     type: number
     sql: ${TABLE}.tbm ;;
   }
 
-  dimension: tir {
+  dimension: total_influencer_ratio {
     type: number
     sql: ${TABLE}.tir ;;
   }
@@ -187,17 +187,17 @@ view: report_sysomos_week {
     sql: ${total_mentions};;
   }
 
-  dimension: tomwa {
+  dimension: total_mention_weekly_avg {
     type: number
     sql: ${TABLE}.tomwa ;;
   }
 
-  dimension: tos {
+  dimension: total_online_sentiment_percentage {
     type: string
     sql: ${TABLE}.tos ;;
   }
 
-  dimension: tosm {
+  dimension: total_online_sentiment_mentions {
     type: string
     sql: ${TABLE}.tosm ;;
   }
@@ -235,7 +235,7 @@ view: report_sysomos_week {
     value_format_name: percent_2
   }
 
-  dimension: tsm {
+  dimension: twitter_sentiment_mentions {
     type: string
     sql: ${TABLE}.tsm ;;
   }
@@ -260,7 +260,7 @@ view: report_sysomos_week {
     sql: ${twitter_users};;
   }
 
-  dimension: vrp {
+  dimension: volume_rollup_plan {
     type: string
     sql: ${TABLE}.vrp ;;
   }

@@ -2,12 +2,12 @@ view: report_talktrack_week {
   sql_table_name: totalsocial.totalsocial_report_talktrack_week ;;
   suggestions: no
 
-  dimension: bsrp {
+  dimension: brandsharing_rollup_plan {
     type: string
     sql: ${TABLE}.bsrp ;;
   }
 
-  dimension: cs {
+  dimension: catalysts {
     type: number
     sql: ${TABLE}.cs ;;
   }
@@ -36,7 +36,7 @@ view: report_talktrack_week {
     sql: ${TABLE}.im ;;
   }
 
-  dimension: irp {
+  dimension: influence_rollup_plan {
     type: string
     sql: ${TABLE}.irp ;;
   }
@@ -52,7 +52,7 @@ view: report_talktrack_week {
     sql: ${impressions} ;;
   }
 
-  dimension: iswa {
+  dimension: impressions_weekly_avg {
     type: number
     sql: ${TABLE}.iswa ;;
   }
@@ -62,122 +62,122 @@ view: report_talktrack_week {
     sql: ${TABLE}.iv ;;
   }
 
-  dimension: mmb {
+  dimension: mm_base {
     type: number
     sql: ${TABLE}.mmb ;;
   }
 
-  dimension: mmr {
+  dimension: mm_references {
     type: number
     sql: ${TABLE}.mmr ;;
   }
 
-  dimension: ms {
+  dimension: mentions {
     type: number
     sql: ${TABLE}.ms ;;
   }
 
-  dimension: nsm {
+  dimension: net_sentiment_mentions {
     type: number
     sql: ${TABLE}.nsm ;;
   }
 
-  dimension: pc {
+  dimension: percent_catalysts {
     type: number
     sql: ${TABLE}.pc ;;
   }
 
-  dimension: pu {
+  dimension: percent_users {
     type: number
     sql: ${TABLE}.pu ;;
   }
 
-  dimension: rcs {
+  dimension: rolledup_catalysts {
     type: number
     sql: ${TABLE}.rcs ;;
   }
 
-  dimension: riswa {
+  dimension: rollup_impressions_weekly_avg {
     type: number
     sql: ${TABLE}.riswa ;;
   }
 
-  dimension: rmmb {
+  dimension: rolledup_mm_base {
     type: number
     sql: ${TABLE}.rmmb ;;
   }
 
-  dimension: rmmr {
+  dimension: rolledup_mm_references {
     type: number
     sql: ${TABLE}.rmmr ;;
   }
 
-  dimension: rnsm {
+  dimension: rolledup_net_sentiment_mentions {
     type: number
     sql: ${TABLE}.rnsm ;;
   }
 
-  dimension: rofb {
+  dimension: raw_offline_bransharing {
     type: number
     sql: ${TABLE}.rofb ;;
   }
 
-  dimension: rofi {
+  dimension: raw_offline_influence {
     type: number
     sql: ${TABLE}.rofi ;;
   }
 
-  dimension: rofs {
+  dimension: raw_offline_sentiment {
     type: number
     sql: ${TABLE}.rofs ;;
   }
 
-  dimension: rofv {
+  dimension: raw_offline_volume {
     type: number
     sql: ${TABLE}.rofv ;;
   }
 
-  dimension: rpc {
+  dimension: rolledup_percent_catalysts {
     type: number
     sql: ${TABLE}.rpc ;;
   }
 
-  dimension: rpu {
+  dimension: rolledup_percent_users {
     type: number
     sql: ${TABLE}.rpu ;;
   }
 
-  dimension: rstm {
+  dimension: rolledup_sentiment_mentions_with_mixed {
     type: string
     sql: ${TABLE}.rstm ;;
   }
 
-  dimension: rstmn {
+  dimension: rolledup_sentiment_mentions_without_mixed {
     type: string
     sql: ${TABLE}.rstmn ;;
   }
 
-  dimension: rstp {
+  dimension: rolledup_sentiment_percentage_with_mixed {
     type: string
     sql: ${TABLE}.rstp ;;
   }
 
-  dimension: rstpn {
+  dimension: rolledup_sentiment_percentage_without_mixed {
     type: string
     sql: ${TABLE}.rstpn ;;
   }
 
-  dimension: rtc {
+  dimension: rolledup_total_catalysts {
     type: number
     sql: ${TABLE}.rtc ;;
   }
 
-  dimension: rtu {
+  dimension: rolledup_total_users {
     type: number
     sql: ${TABLE}.rtu ;;
   }
 
-  dimension: rus {
+  dimension: rolledup_users {
     type: number
     sql: ${TABLE}.rus ;;
   }
@@ -196,62 +196,62 @@ view: report_talktrack_week {
     sql: ${TABLE}.sd ;;
   }
 
-  dimension: srp {
+  dimension: sentiment_rollup_plan {
     type: string
     sql: ${TABLE}.srp ;;
   }
 
-  dimension: stm {
+  dimension: sentiment_mention_with_mixed {
     type: string
     sql: ${TABLE}.stm ;;
   }
 
-  dimension: stmn {
+  dimension: sentiment_mention_without_mixed {
     type: string
     sql: ${TABLE}.stmn ;;
   }
 
-  dimension: stp {
+  dimension: sentiment_percentage_with_mixed {
     type: string
     sql: ${TABLE}.stp ;;
   }
 
-  dimension: stpn {
+  dimension: sentiment_percentage_without_mixed {
     type: string
     sql: ${TABLE}.stpn ;;
   }
 
-  dimension: tc {
+  dimension: total_catalysts {
     type: number
     sql: ${TABLE}.tc ;;
   }
 
-  dimension: ti {
+  dimension: total_impressions {
     type: number
     sql: ${TABLE}.ti ;;
   }
 
-  dimension: tm {
+  dimension: total_mentions {
     type: number
     sql: ${TABLE}.tm ;;
   }
 
-  dimension: ts {
+  dimension: talkshare {
     type: number
     sql: ${TABLE}.ts ;;
   }
 
-  dimension: tu {
+  dimension: total_users {
     type: number
     sql: ${TABLE}.tu ;;
   }
 
-  dimension: us {
+  dimension: users {
     type: number
     sql: ${TABLE}.us ;;
   }
 
-  dimension: vrp {
+  dimension: volume_rollup_plan {
     type: string
     sql: ${TABLE}.vrp ;;
   }

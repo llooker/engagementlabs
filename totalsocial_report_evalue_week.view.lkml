@@ -66,32 +66,32 @@ view: report_evalue_week {
     sql: ${TABLE}.mf ;;
   }
 
-  dimension: pf {
+  dimension: pinterest_followers {
     type: number
     sql: ${TABLE}.pf ;;
   }
 
-  dimension: pr {
+  dimension: pinterest_repins {
     type: number
     sql: ${TABLE}.pr ;;
   }
 
-  dimension: ronb {
+  dimension: raw_online_brandsharing {
     type: number
     sql: ${TABLE}.ronb ;;
   }
 
-  dimension: ronbwa {
+  dimension: raw_online_brandsharing_weekly_avg {
     type: number
     sql: ${TABLE}.ronbwa ;;
   }
 
-  dimension: rts {
+  dimension: rolledup_total_shares {
     type: number
     sql: ${TABLE}.rts ;;
   }
 
-  dimension: rtswa {
+  dimension: rolledup_total_shares_weekly_avg {
     type: number
     sql: ${TABLE}.rtswa ;;
   }
@@ -134,7 +134,7 @@ view: report_evalue_week {
     sql: ${TABLE}.ts ;;
   }
 
-  dimension: tswa {
+  dimension: total_shares_weekly_avg {
     type: number
     sql: ${TABLE}.tswa ;;
   }
