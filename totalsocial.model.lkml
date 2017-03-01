@@ -28,8 +28,34 @@ explore: brand {
     sql_on: ${brandcategory.category_id} = ${category.id} ;;
     relationship: many_to_one
   }
+  # join: mention_percentile {
+  #   sql_on: ${report_sysomos_week.brand_id}=${mention_percentile.brand_name} ;;
+  #   relationship: one_to_one
+  # }
 
 }
+
+# explore: mention_percentile {
+#   join: report_sysomos_week {
+#     sql_on: ${mention_percentile.brand_name} = ${report_sysomos_week.brand_id} ;;
+#     relationship: one_to_one
+#   }
+#   join: brand {
+#     sql_on: ${report_sysomos_week.brand_id} = ${brand.id} ;;
+#     relationship: many_to_one
+#   }
+# }
+
+# explore: mention_percentile_rank {
+#   join: report_sysomos_week {
+#     sql_on: ${mention_percentile_rank.brand_id} = ${report_sysomos_week.brand_id} ;;
+#     relationship: one_to_one
+#   }
+#   join: brand {
+#     sql_on: ${report_sysomos_week.brand_id} = ${brand.id} ;;
+#     relationship: many_to_one
+#   }
+# }
 
 
 explore: report_sysomos_week {

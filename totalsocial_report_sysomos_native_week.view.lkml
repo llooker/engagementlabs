@@ -205,34 +205,40 @@ view: report_sysomos_week {
   dimension: twitter_sentiment_percentage_negative {
     type: number
     sql: ${TABLE}.ts.n ;;
+    value_format_name: percent_2
   }
 
   dimension: twitter_sentiment_percentage_positive {
     type: number
     sql: ${TABLE}.ts.p ;;
+    value_format_name: percent_2
   }
 
   dimension: twitter_sentiment_percentage_neutral {
     type: number
     sql: ${TABLE}.ts.ne ;;
+    value_format_name: percent_2
   }
 
   measure: twitter_sentiment_percentage_negative_avg {
     type: average
     sql: ${twitter_sentiment_percentage_negative};;
     value_format_name: percent_2
+    drill_fields: [brand.name,start_date_week,twitter_sentiment_percentage_negative,twitter_sentiment_percentage_neutral,twitter_sentiment_percentage_positive]
   }
 
   measure: twitter_sentiment_percentage_positive_avg {
     type: average
     sql: ${twitter_sentiment_percentage_positive};;
     value_format_name: percent_2
+    drill_fields: [brand.name,start_date_week,twitter_sentiment_percentage_negative,twitter_sentiment_percentage_neutral,twitter_sentiment_percentage_positive]
   }
 
   measure: twitter_sentiment_percentage_neutral_avg {
     type: average
     sql: ${twitter_sentiment_percentage_neutral};;
     value_format_name: percent_2
+    drill_fields: [brand.name,start_date_week,twitter_sentiment_percentage_negative,twitter_sentiment_percentage_neutral,twitter_sentiment_percentage_positive]
   }
 
   dimension: tsm {
