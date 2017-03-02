@@ -13,6 +13,7 @@ explore: brand {
     relationship: one_to_many
   }
   join: report_evalue_week {
+    view_label: "Weekly Social Media Information"
     sql_on: ${report_sysomos_week.brand_id} = ${report_evalue_week.brand_id} AND ${report_sysomos_week.start_date_date} = ${report_evalue_week.start_date_date}  ;;
     relationship: one_to_many
   }
