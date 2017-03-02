@@ -7,6 +7,7 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 # # and define the joins that connect them together.
 #
 explore: brand {
+  persist_for: "24 hours"
   label: "Weekly Information by Brand"
   join: report_sysomos_week {
     sql_on: ${brand.id} = ${report_sysomos_week.brand_id}  ;;

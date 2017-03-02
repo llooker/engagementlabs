@@ -386,9 +386,33 @@ view: report_sysomos_week {
 
   measure: twitter_mentions_sum {
     type: sum
-    sql: ${twitter_mentions;;
+    sql: ${twitter_mentions};;
     group_label: "Mentions"
   }
+
+  measure: twitter_mention_share {
+    type: number
+    sql: 1.0*${twitter_mentions_sum}/IF(${total_mentions_sum}=0,NULL,${total_mentions_sum}) ;;
+    value_format_name: percent_2
+    group_label: "Mentions"
+  }
+
+  measure: blog_mention_share {
+    type: number
+    sql: 1.0*${total_blog_mentions}/IF(${total_mentions_sum}=0,NULL,${total_mentions_sum}) ;;
+    value_format_name: percent_2
+    group_label: "Mentions"
+  }
+
+  measure: forum_mention_share {
+    type: number
+    sql: 1.0*${forum_mentions_sum}/IF(${total_mentions_sum}=0,NULL,${total_mentions_sum}) ;;
+    value_format_name: percent_2
+    group_label: "Mentions"
+  }
+
+
+
 
   measure: twitter_mentions_per_brand {
     type: number
