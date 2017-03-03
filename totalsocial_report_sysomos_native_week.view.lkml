@@ -48,18 +48,21 @@ view: report_sysomos_week {
     type: average
     sql: ${blog_sentiment_positive} ;;
     group_label: "Blog Sentiment"
+    value_format_name: percent_2
   }
 
   measure: avg_blog_sentiment_neutral {
     type: average
     sql: ${blog_sentiment_neutral} ;;
     group_label: "Blog Sentiment"
+    value_format_name: percent_2
   }
 
   measure: avg_blog_sentiment_negative {
     type: average
     sql: ${blog_sentiment_negative} ;;
     group_label: "Blog Sentiment"
+    value_format_name: percent_2
   }
 
 
@@ -162,18 +165,21 @@ view: report_sysomos_week {
     type: average
     sql: ${forum_sentiment_positive} ;;
     group_label: "Forum Sentiment"
+    value_format_name: percent_2
   }
 
   measure: avg_forum_sentiment_neutral {
     type: average
     sql: ${forum_sentiment_neutral} ;;
     group_label: "Forum Sentiment"
+    value_format_name: percent_2
   }
 
   measure: avg_forum_sentiment_negative {
     type: average
     sql: ${forum_sentiment_negative} ;;
     group_label: "Forum Sentiment"
+    value_format_name: percent_2
   }
 
 
@@ -274,6 +280,17 @@ view: report_sysomos_week {
     hidden: yes
   }
 
+  dimension: week_of_year_number {
+    type: number
+    sql: 1.0*${start_date_week} ;;
+    hidden: yes
+  }
+
+  dimension: week_of_quarter {
+    type: number
+    sql: IF(pmod(${start_date_week_of_year},13) = 0, 13, pmod(${start_date_week_of_year},13))  ;;
+  }
+
   dimension: rolledup_total_influencer_ratio {
     type: number
     sql: ${TABLE}.rtbir ;;
@@ -311,12 +328,18 @@ view: report_sysomos_week {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
+      fiscal_month_num,
+      fiscal_quarter,
       month,
       quarter,
       year
     ]
     sql: ${TABLE}.sd ;;
+    drill_fields: [brand.name]
   }
+
 
   dimension: sentiment_rollup_plan {
     type: string

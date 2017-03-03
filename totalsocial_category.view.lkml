@@ -20,7 +20,7 @@ view: category {
   dimension: name {
     type: string
     sql: ${TABLE}.n ;;
-    drill_fields: [brand.name]
+    drill_fields: [brand.name,report_sysomos_week.start_date_week]
   }
 
   dimension: parent_id {

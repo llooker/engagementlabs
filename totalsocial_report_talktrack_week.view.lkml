@@ -252,6 +252,7 @@ view: report_talktrack_week {
       year
     ]
     sql: ${TABLE}.sd ;;
+    drill_fields: [brand.name]
   }
 
   dimension: sentiment_rollup_plan {

@@ -78,6 +78,12 @@ view: brand {
   dimension: name {
     type: string
     sql: ${TABLE}.n ;;
+    drill_fields: [report_sysomos_week.start_date_week]
+    link: {
+      label: "Brand Dashboard"
+      url: "https://engagementlabs.looker.com/dashboards/2?Brand={{ value }}"
+
+    }
   }
 
   dimension: project {

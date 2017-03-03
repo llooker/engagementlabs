@@ -2,6 +2,7 @@ connection: "totalsocial_cas-c1-east-ca-n1"
 
 include: "*.view.lkml"         # include all views in this project
 include: "*.dashboard.lookml"  # include all dashboards in this project
+fiscal_month_offset: 2
 
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.

@@ -151,6 +151,7 @@ view: report_evalue_week {
       year
     ]
     sql: ${TABLE}.sd ;;
+    drill_fields: [brand.name]
   }
 
   dimension: key {
