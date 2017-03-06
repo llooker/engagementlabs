@@ -442,6 +442,7 @@ view: report_sysomos_week {
     sql: 1.0 * ${twitter_mentions_sum}/IF(${brand.count}=0,NULL,${brand.count}) ;;
     value_format_name: decimal_2
     view_label: "Brand Comparison"
+    drill_fields: [brand.name,twitter_mentions_sum]
   }
 
   dimension: total_mentions {
